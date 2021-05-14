@@ -12,7 +12,7 @@ class _HeartState extends State<Heart> {
       icon: Icon(
         Icons.favorite,
         color: Colors.grey[400],
-        size: 30,
+        size: 25,
       ),
       onPressed: () {},
     );
