@@ -29,8 +29,7 @@ class _HomeState extends State<Home> {
                 ),
                 Flexible(
                   child: TripList(),
-                )
-                //Sandbox(),
+                ),
               ],
             )));
   }
