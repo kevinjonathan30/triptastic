@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:triptastic/screens/home.dart';
-import 'package:triptastic/screens/sandbox.dart';
 
 void main() {
   runApp(MyApp());
@@ -13,7 +12,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Triptastic',
-      home: Sandbox(),
+      home: Home(),
     );
   }
 }
