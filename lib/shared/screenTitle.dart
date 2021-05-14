@@ -10,7 +10,10 @@ class ScreenTitle extends StatelessWidget {
     return Text(
       text,
       style: TextStyle(
-          fontSize: 36, color: Colors.white, fontWeight: FontWeight.bold),
+          fontSize: 36,
+          color: Colors.white,
+          fontWeight: FontWeight.bold,
+          letterSpacing: 1.0),
     );
   }
 }
