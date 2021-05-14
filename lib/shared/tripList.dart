@@ -20,10 +20,11 @@ class _TripListState extends State<TripList> {
   void _addTrips() {
     // get data from db
     List<Trip> _trips = [
-      Trip(title: 'Beach Paradise', price: '350', nights: '3', img: 'beach.png'),
-      Trip(title: 'City Break', price: '400', nights: '5', img: 'city.png'),
-      Trip(title: 'Ski Adventure', price: '750', nights: '2', img: 'ski.png'),
-      Trip(title: 'Space Blast', price: '600', nights: '4', img: 'space.png'),
+      Trip(
+          title: 'Beach Paradise', price: '350', nights: '3', img: 'beach.jpg'),
+      Trip(title: 'City Break', price: '400', nights: '5', img: 'city.jpg'),
+      Trip(title: 'Ski Adventure', price: '750', nights: '2', img: 'ski.jpg'),
+      Trip(title: 'Space Blast', price: '600', nights: '4', img: 'space.jpg'),
     ];
 
     _trips.forEach((Trip trip) {
@@ -34,15 +35,20 @@ class _TripListState extends State<TripList> {
   Widget _buildTile(Trip trip) {
     return ListTile(
       onTap: () {
-        Navigator.push(context, MaterialPageRoute(builder: (context) => Details(trip: trip)));
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => Details(trip: trip)));
       },
       contentPadding: EdgeInsets.all(25),
       title: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Text('${trip.nights} nights',
-              style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold, color: Colors.blue[300])),
-          Text(trip.title, style: TextStyle(fontSize: 20, color: Colors.grey[600])),
+              style: TextStyle(
+                  fontSize: 14,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.blue[300])),
+          Text(trip.title,
+              style: TextStyle(fontSize: 20, color: Colors.grey[600])),
         ],
       ),
       leading: ClipRRect(
@@ -59,11 +65,10 @@ class _TripListState extends State<TripList> {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-      key: _listKey,
-      itemCount: _tripTiles.length,
-      itemBuilder: (context, index) {
-        return _tripTiles[index];
-      }
-    );
+        key: _listKey,
+        itemCount: _tripTiles.length,
+        itemBuilder: (context, index) {
+          return _tripTiles[index];
+        });
   }
 }

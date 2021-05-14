@@ -9,7 +9,8 @@ class ScreenTitle extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       text,
-      style: TextStyle(fontSize: 36, color: Colors.white, fontWeight: FontWeight.bold),
+      style: TextStyle(
+          fontSize: 36, color: Colors.white, fontWeight: FontWeight.bold),
     );
   }
 }
