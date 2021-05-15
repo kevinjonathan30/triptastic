@@ -19,26 +19,17 @@ class _HeartState extends State<Heart> with SingleTickerProviderStateMixin {
     _controller =
         AnimationController(duration: Duration(milliseconds: 300), vsync: this);
 
-    _curve = CurvedAnimation(
-      parent: _controller,
-      curve: Curves.slowMiddle
-    );
+    _curve = CurvedAnimation(parent: _controller, curve: Curves.slowMiddle);
 
-    _colorAnimation = ColorTween(begin: Colors.grey[400], end: Colors.red)
-        .animate(_curve);
+    _colorAnimation =
+        ColorTween(begin: Colors.grey[400], end: Colors.red).animate(_curve);
 
-    _sizeAnimation = TweenSequence(
-      <TweenSequenceItem<double>>[
-        TweenSequenceItem<double>(
-          tween: Tween<double>(begin: 25, end: 30),
-          weight: 50
-        ),
-        TweenSequenceItem<double>(
-          tween: Tween<double>(begin: 30, end: 25),
-          weight: 50
-        ),
-      ]
-    ).animate(_curve);
+    _sizeAnimation = TweenSequence(<TweenSequenceItem<double>>[
+      TweenSequenceItem<double>(
+          tween: Tween<double>(begin: 25, end: 30), weight: 50),
+      TweenSequenceItem<double>(
+          tween: Tween<double>(begin: 30, end: 25), weight: 50),
+    ]).animate(_curve);
 
     _controller.addListener(() {
       print(_controller.value);
@@ -46,12 +37,12 @@ class _HeartState extends State<Heart> with SingleTickerProviderStateMixin {
     });
 
     _controller.addStatusListener((status) {
-      if(status == AnimationStatus.completed) {
+      if (status == AnimationStatus.completed) {
         setState(() {
           isFav = true;
         });
-      } 
-      if(status == AnimationStatus.dismissed) {
+      }
+      if (status == AnimationStatus.dismissed) {
         setState(() {
           isFav = false;
         });

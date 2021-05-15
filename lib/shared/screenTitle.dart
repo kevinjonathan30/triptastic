@@ -8,7 +8,7 @@ class ScreenTitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TweenAnimationBuilder(
-          child: Text(
+      child: Text(
         text,
         style: TextStyle(
             fontSize: 36,
